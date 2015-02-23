@@ -1,0 +1,68 @@
+	
+	body { 
+		padding-top: 80px;
+		word-wrap: break-word; 
+		background-color: #00C7CC;
+		font-family: 'Open Sans', Georgia, Times, serif;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+	    font-family: 'Open Sans', Georgia, Times, serif;
+	}
+
+	#primary-container {
+		background-color: #FFF;
+		padding-bottom: 100px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		-moz-box-shadow: 1px 1px 2px 0px #000000;
+		-webkit-box-shadow: 0 0 3px 1px #7A7A7A;
+		box-shadow: 0 0 3px 1px #7A7A7A;
+	}
+
+	.historyFilterFields, .historyFilterDatePicker{
+		width: 260px;
+		margin-bottom: 5px;
+		display: inline-block;
+	}
+
+	.userTableFields {
+		width: 150px;
+		margin-bottom: 5px;
+		display: inline-block;
+	}
+
+	.btn-info{
+		background-color: #00C7CC;
+		border-color: #00D1D6;
+	}
+
+	.btn-info:hover{
+
+		background-color: #4CD1D6;
+		border-color: #4CD1D6;
+
+	}
+
+	@media (max-width: 991px) {
+		.usersTableRow{
+			float: left;
+			width: 93%;
+			margin: 10px;
+
+		}
+		.usersTableRow input{
+			margin: 10px 0;
+		}
+		#usersTableTitle{
+			display: none;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.usersTableRow{
+			width: 99%;
+		}
+	}

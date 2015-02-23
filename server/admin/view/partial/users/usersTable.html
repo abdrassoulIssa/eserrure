@@ -1,0 +1,28 @@
+<div class='container text-center'>
+	<div id="usersTableTitle" class='row'>
+		<div class='col-md-2 col-md-offset-1'><h4>Firstname</h4></div>
+		<div class='col-md-2'><h4>Lastname</h4></div>
+		<div class='col-md-2'><h4>Key ID</h4></div>
+		<div class='col-md-2'><h4>Permission</h4></div>
+		<div class='col-md-2'><h4>Actions</h4></div>
+	</div>
+	<div id="usersTableContent" class='row text-center'>
+		[[usersTableContent]]
+		<form action='scripts/user.php?action=create' method='post'>	
+			<div class='row usersTableRow' style='margin-bottom: 20px;'>
+				<div class='col-md-2 col-md-offset-1'>
+				<input type='text' class='form-control' name='firstname' placeholder='Firstname'  required/></div>
+				<div class='col-md-2'><input type='text' class='form-control' name='lastname' placeholder='Lastname' required/></div>
+				<div class='col-md-2'>
+				<input type='text' class='form-control' name='idcard' placeholder='Key ID' required/></div>
+				<div class='col-md-2'>			
+					<select name='permission' class='form-control'>
+						<option value='1' >Allowed</option>
+						<option value='2' >Denied</option>
+					</select>
+				</div>
+				<div class='col-md-2'><input type='submit' class="btn btn-primary" value='Create' /></div>
+			</div>
+		</form>
+	</div>
+</div>

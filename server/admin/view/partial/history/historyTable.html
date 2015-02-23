@@ -1,0 +1,36 @@
+
+<div class='well text-center' style='margin: 20px;'>
+	<form action='history.php' methode='get' class='form-inline' role="form">
+		<div class="form-group">
+			<input id="datepicker1" type="date"  min="2015-01-01"  class='form-control historyFilterDatePicker' name='begin' placeholder='Start date' readonly/>
+			<input id="datepicker2" type="date"  min="2015-01-01" class='form-control historyFilterDatePicker' name='end' placeholder='End date'  readonly/>
+			<button type="sumbit" class="btn btn-primary btn-lg btn-block">Filter</button>
+		</div>
+	</form>
+</div>
+
+<div style='padding: 20px;'>
+	<table class='table text-center table-hover table-bordered'>
+		<thead>
+			<tr>
+				<td><h4>Firstname</h4></td>
+				<td><h4>Lastname</h4></td>
+				<td><h4>Key ID</h4></td>
+				<td><h4>Date</h4></td>
+				<td><h4>Permission</h4></td>
+				<td><h4>Action</h4></td>
+			</tr>
+		</thead>
+		[[historyTableContent]]
+	</table>
+<div>
+
+<script>
+	$(function() {
+		$( ".historyFilterDatePicker" ).datepicker({
+			changeMonth: true,
+      		changeYear: true,
+			showAnim: 'slideDown'
+		});
+	});
+</script>
