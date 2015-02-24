@@ -2,8 +2,9 @@
 	<div id="usersTableTitle" class='row'>
 		<div class='col-md-2 col-md-offset-1'><h4>Firstname</h4></div>
 		<div class='col-md-2'><h4>Lastname</h4></div>
-		<div class='col-md-2'><h4>Key ID</h4></div>
+		<div class='col-md-1'><h4>Key ID</h4></div>
 		<div class='col-md-2'><h4>Permission</h4></div>
+		<div class='col-md-2'><h4>Profil</h4></div>
 		<div class='col-md-2'><h4>Actions</h4></div>
 	</div>
 	<div id="usersTableContent" class='row text-center'>
@@ -13,14 +14,23 @@
 				<div class='col-md-2 col-md-offset-1'>
 				<input type='text' class='form-control' name='firstname' placeholder='Firstname'  required/></div>
 				<div class='col-md-2'><input type='text' class='form-control' name='lastname' placeholder='Lastname' required/></div>
-				<div class='col-md-2'>
+				<div class='col-md-1'>
 				<input type='text' class='form-control' name='idcard' placeholder='Key ID' required/></div>
+				
 				<div class='col-md-2'>			
 					<select name='permission' class='form-control'>
 						<option value='1' >Allowed</option>
 						<option value='2' >Denied</option>
 					</select>
 				</div>
+
+				<div class='col-md-2'>			
+					<select name='profil' class='form-control'>
+						<option value='1' >admin</option>
+						<option value='2' >user</option>
+					</select>
+				</div>
+
 				<div class='col-md-2'><input type='submit' class="btn btn-primary" value='Create' /></div>
 			</div>
 		</form>

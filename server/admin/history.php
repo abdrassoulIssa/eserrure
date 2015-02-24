@@ -36,7 +36,8 @@
 
 
     //Get the history in the database
-	$history = getHistory($_GET['begin'], $_GET['end']);
+    if(isset($_GET['idkey'])) $history = getUserHistory($_GET['idkey']);
+    else $history = getHistory($_GET['begin'], $_GET['end']);
     //Create the history table
 	//Get the template file that contain the history table
 	$content .= file_get_contents('view/partial/history/historyTable.html');
