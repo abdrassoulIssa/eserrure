@@ -3,13 +3,10 @@ This is an interface of Monitoring for an electronic lock connected to an authen
 
 La serrure fonctionne avec un système de lecture de badge NFC/RFID. Les utilisateurs présentent leur badge  
 personnel sur l’antenne du lecteur. La serrure envoie l’identifiant du badge à un serveur web et ouvre la porte  
-suivant la réponse de celui-ci. Les droits d’accès des utilisateurs sont g ́er ́es dans une base de données 
-que l’on  peut administrer par une interface web.
+suivant la réponse de celui-ci. Les droits d’accès des utilisateurs sont gérés dans une base de données 
+que l’on peut administrer par une interface web.
 
-Pour cette application, j'ai utilisé:
---> Un Arduino Uno
---> Un Arduino Wireless SD Shield
---> Un shield Adafruit PN532 NFC/RFID
+Matériels:Arduino Uno, Arduino Wireless SD Shield, shield Adafruit PN532 NFC/RFID.
 
 Pour authentifier une clé grâce au serveur, la serrure effectue une requête de type GET et place 
 la valeur de  la clé qu’elle lit dans un paramètre. Exemple : www.monsite.com/index.php?key=20122565 
