@@ -8,10 +8,10 @@
 database = 'eserrure'
 ;
 ; Need a user that is allowed to use the database (read/write)
-username = 'computer'		
+username = 'issa'		
 ;
 ; Password of the user
-password = 'computer'
+password = '23021990'
 ;
 ; The host where is located the database
 hostname = 'localhost'

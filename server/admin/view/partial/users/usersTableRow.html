@@ -1,26 +1,16 @@
 
 <!--<div class="alert alert-info">-->
-
 <form action='scripts/user.php?action=update&iduser=[[iduser]]' method='post'>		
 	<div class='row usersTableRow' style='margin-bottom: 20px;'>
 		<div class='col-md-2 col-md-offset-1'><input type='text' class='bg-info form-control' name='firstname' placeholder='Firstname' value='[[firstname]]' /></div>
 		<div class='col-md-2'><input type='text' class='bg-info form-control' name='lastname' placeholder='Lastname' value='[[lastname]]' /></div>
-		<div class='col-md-1'><input type='text' class='bg-info form-control' name='idcard' placeholder='Key ID' value='[[idcard]]' /></div>
+		<div class='col-md-2'><input type='text' class='bg-info form-control' name='idcard' placeholder='Key ID' value='[[idcard]]' /></div>
 		<div class='col-md-2'>
 			<select name='permission' class='form-control'>
 				<option value='1' [[selectedAllowed]]>Allowed</option>
 				<option value='2' [[selectedDenied]]>Denied</option>
 			</select>
 		</div>
-
-
-		<div class='col-md-2'>			
-			<select name='profil' class='form-control'>
-				<option value='1' >admin</option>
-				<option value='2' >user</option>
-			</select>
-		</div>
-
 		<div class='col-md-2'>
 			<div class='row'>
 				<div class='col-md-6'><input type='submit' value='Update' class='btn btn-primary' /></div>

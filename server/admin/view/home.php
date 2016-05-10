@@ -43,7 +43,13 @@
         <div class="starter-template">
              <div class="jumbotron">
                     <p>This is an interface of Monitoring  for an electronic lock connected to an authenticating web server.</p>
-              </div>
+                    <p> Eserrure is a project of a electronical lock connected to the Internet. 
+                    The objective of the project was to provide source codes and manufacture plans of the lock.</p>
+                    <h2>How does it work </h2>
+                    Eserrure  operates with a RFID/NFC reading system. Users put their own badge on the antenna of the reader. The lock sends the identifier of the key to a web server, and opens the door following the response. The access rights of users are managed in a database that can be administered through a web interface.
+This project was carried out with an Arduino Uno and  Wifi Shield, but it can be reproduced with an Ethernet Shield  making  changes to the source code. Arduino products were chosen because they are open-source software.</p>
+
+             </div>
         </div>
     </div> 
 

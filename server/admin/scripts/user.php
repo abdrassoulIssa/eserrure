@@ -8,7 +8,7 @@
 	//Get the action in the URL
 	$action = $_GET['action'];
 	//Will set to true if error
-	$error = null;
+	$error = 0;
 	//Switch on the action to determine what we have to do
 	switch($action) {
 	    case 'create':
@@ -24,23 +24,22 @@
 	        break;
 
 	    case 'createkey':
-	    {
 	    	$status = createNewKey();
 	        break;
-	    }
 
 	    default:
 	        break;
 	}
     //Update the offline file
-	if(!$error){
-
+	if($error==false){
 		$users = getUsers();
+		$out ="";
 		foreach($users as $user) {
 			$out .= "# $user[firstname] $user[lastname] \n $user[idkey] $user[permission] \n";
 		}
-		file_put_contents(ROOT_PATH."/files/keys.txt", $out);
+		file_put_contents(ROOT_PATH.'/admin/files/keys.txt',$out);		
 	}
+
 
 	if ( ($status === 'createKeyOK')) {
 		header('location:../history.php?status='.$status);
@@ -111,7 +110,7 @@
 		// check if the key doesn't already exist
 		// Select all user in the database with hold the key
 		$users = getUserByIdCard($_POST['idcard']);
-		$card  = getCardsById($_POST['idcard']);
+		$card  = getCardById($_POST['idcard']);
 		if(!empty($users['idcard'])){
 			// If there is a single user that old the key
 			// If the user that hold the key isn't the same user of the update
@@ -126,7 +125,7 @@
 			$error = true;
 			return 'errorExist' ;
 		}
-
+		$error = false;
      	// Add the user in the database
 		updateUser($id, $user);
 		// Return a confirmation message

@@ -1,4 +1,8 @@
 
+--CREATE USER "username"@"%";
+--GRANT ALL ON eserrure.* TO "username"@"%";
+--SET password FOR "username"@"%" = password('password');
+
 DROP TABLE IF EXISTS `card`; 
 DROP TABLE IF EXISTS `users`; 
 DROP TABLE IF EXISTS `accesslog`; 
@@ -17,13 +21,24 @@ CREATE TABLE IF NOT EXISTS `eserrure`.`users` (
   `iduser` INT NOT NULL AUTO_INCREMENT,
   `firstname` VARCHAR(45) NOT NULL,
   `lastname` VARCHAR(45) NOT NULL,
-  `idcard` INT NOT NULL REFERENCES card(`idcard`)
+  `idcard` VARCHAR(45) NOT NULL REFERENCES card(`idcard`)
    ON DELETE CASCADE ON UPDATE CASCADE,
   `permission` INT NOT NULL,
    PRIMARY KEY (`iduser`),
    UNIQUE KEY `idcard` (`idcard`)
   )ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `mydb`.`profil`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `eserrure`.`profil` (
+  `idprofil` INT NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `startTime` DATETIME NOT NULL,
+  `stopTime`   DATETIME NOT NULL,
+   PRIMARY KEY (`idprofil`)
+  )ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`accesslog`
@@ -42,25 +57,16 @@ CREATE TABLE IF NOT EXISTS `eserrure`.`accesslog` (
 
 
 
-
-CREATE TABLE IF NOT EXISTS `eserrure`.`profil` (
-  `idprofil` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `startTime` DATETIME NOT NULL,
-  `stopTime`  DATETIME NOT NULL,
-  PRIMARY KEY (`idprofil`)
-) ENGINE=InnoDB;
-
-
 INSERT INTO `card` VALUES(DEFAULT,'20122565');
 INSERT INTO `card` VALUES(DEFAULT,'20142565');
 INSERT INTO `card` VALUES(DEFAULT,'230219255');
+
 INSERT INTO `users` VALUES(DEFAULT,'ABDRASSOUL','YOUSSOUF',1,1);
 INSERT INTO `users` VALUES(DEFAULT,'OSINUNGA','BENGA',2,1);
 
+INSERT INTO `accesslog` VALUES(DEFAULT,'OSINUNGA','BENGA',2,CURDATE(),1);
+INSERT INTO `accesslog` VALUES(DEFAULT,'ABDRASSOUL','YOUSSOUF',1,NOW(),1);
 
-INSERT INTO `accesslog` VALUES(DEFAULT,'OSINUNGA','BENGA',20122565,CURDATE(),1);
-INSERT INTO `accesslog` VALUES(DEFAULT,'ABDRASSOUL','YOUSSOUF',20142302,NOW(),1);
 
 
 

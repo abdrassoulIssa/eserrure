@@ -64,8 +64,6 @@
 
 		$beginFinal = '';
 		$endFinal = '';
-
-
 		if(isset($begin) || isset($end)){
 			$validDateBegin = validateDate($begin, 'm/d/Y');
 			$validDateEnd   = validateDate($end, 'm/d/Y');
@@ -80,11 +78,11 @@
 		return select('accesslog', $where, 'date DESC', '', false, 'AND', '*', $whereTypes);
 	}
 
+
 	function getUserHistory($idkey){
         $where   = array('idkey' => $idkey);
         $query = "SELECT * FROM accesslog WHERE idkey=$idkey ORDER BY date DESC";
 		return executeSQL($query);
-        //return select('accesslog', $where, 'date DESC', '', false, 'AND', '*', array('string'));
     }
 
 	/********************
